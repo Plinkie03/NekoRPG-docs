@@ -150,7 +150,7 @@ const useItemCount = (category: string) => {
           setItemCount(count);
           sessionStorage.setItem(cacheKey, String(count));
         } else {
-          throw new Error(`${capitalizedType}.json does not contain a valid array`);
+          throw new Error(`${category}.json does not contain a valid array`);
         }
       } catch (err: any) {
         setError(err.message || "An unknown error occurred");

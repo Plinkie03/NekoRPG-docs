@@ -48,3 +48,149 @@
   padding: 1rem;
   border-radius: 0.5rem !important;
 }
+
+.item {
+  background-color: var(--secondary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  height: 25rem;
+  max-height: 25rem;
+}
+
+.itemImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000020;
+  width: 6rem;
+  height: 6rem;
+  margin: auto;
+  border-radius: 0.5rem;
+  border: #00000080 solid 1.5px;
+}
+
+.image {
+  padding: 1px;
+}
+
+.itemText {
+  width: 100%;
+  text-align: center;
+}
+
+.textMain {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  font-size: larger;
+  font-weight: 600;
+  color: white;
+}
+
+.description {
+  font-size: medium;
+  font-weight: 400;
+  color: var(--foreground);
+}
+
+.statsList {
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
+  max-height: 11rem;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.statsList::-webkit-scrollbar {
+  display: none;
+}
+
+.statsList::-webkit-scrollbar-track {
+  background: #2c2c2c;
+  border-radius: 4px;
+}
+
+.statsList::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+  border: 2px solid #2c2c2c;
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #2c2c2c;
+  border: 1px solid #444;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.statName {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.statValue {
+  background-color: #3c3c3c;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  color: white;
+  padding: 2px 0.5rem;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.badgeList {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none; /* Firefox - hides the scrollbar */
+}
+
+.badgeList::-webkit-scrollbar {
+  display: none;
+}
+
+.badgeListWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-height: 20rem;
+  overflow: hidden;
+}
+
+.badgeListWrapper::before, .badgeListWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5rem;
+  pointer-events: none;
+}
+
+.badgeListWrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0 0 0 / 0.08), rgba(0, 0, 0, 0));
+}
+
+.badgeListWrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0 0 0 / 0.08), rgba(0, 0, 0, 0));
+}

@@ -8,6 +8,7 @@
   --thirdly: #00000080;
   --foreground: #DDDDDD;
   --theme: #ff47ff;
+  --themeHover: #A647FF;
   --chakra-colors-bg: #1A1C1F;
 }
 
@@ -70,6 +71,14 @@ body {
 
 .color-theme {
   color: var(--theme);
+}
+
+.color-theme:hover {
+  color: var(--themeHover);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
 }
 
 .page-main {

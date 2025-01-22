@@ -1,0 +1,14 @@
+.itemList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.itemList > p {
+  color: gray;
+  font-size: 1rem;
+  text-align: flex-start;
+  width: 100%;
+}

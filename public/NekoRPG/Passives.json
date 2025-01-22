@@ -1,0 +1,152 @@
+[
+  {
+    "id": 13,
+    "name": "Arcane",
+    "emoji": "<:arcane:1329097247559778447>",
+    "showTag": false,
+    "gearTypes": [
+      "Leggings"
+    ],
+    "info": "When hit by spells, your damage taken is reduced by 25%"
+  },
+  {
+    "id": 12,
+    "name": "Armored",
+    "gearTypes": [
+      "Leggings"
+    ],
+    "emoji": "<:armored:1329096837520691313>",
+    "showTag": false,
+    "info": "When hit by basic attacks, your damage taken is reduced by 25%"
+  },
+  {
+    "id": 1,
+    "name": "Berserk",
+    "emoji": "<:berserk:1329096653478563900>",
+    "showTag": false,
+    "gearTypes": [
+      "Weapon"
+    ],
+    "info": "For every percent of health lost, Damage Taken -1%, Strength +1% (Caps at 30)"
+  },
+  {
+    "id": 15,
+    "emoji": "<:crimsonrush:1329096088451285045>",
+    "name": "Crimson Rush",
+    "gearTypes": [
+      "Boots"
+    ],
+    "cooldown": 20,
+    "info": "When under 40% HP, your agility is boosted by 50% for 10 rounds"
+  },
+  {
+    "id": 3,
+    "name": "Divine Shield",
+    "cooldown": 10,
+    "emoji": "<:divine_shield:1329095864169271456>",
+    "gearTypes": [
+      "Chestplate"
+    ],
+    "info": "When hit by an enemy, absorb the damage and stun the target for 5 rounds, lowering their defense by 0.25x"
+  },
+  {
+    "id": 6,
+    "name": "Echo of the Past",
+    "emoji": "<:echoofthepast:1329095633197334569>",
+    "showTag": false,
+    "gearTypes": [
+      "Chestplate"
+    ],
+    "info": "Reflect damage back to the target for 10%"
+  },
+  {
+    "id": 5,
+    "name": "Execution",
+    "gearTypes": [
+      "Weapon"
+    ],
+    "emoji": "<:execution:1329095107273555988>",
+    "chance": 10,
+    "info": "10% chance to execute the target [Execution: deal 3x damage]"
+  },
+  {
+    "id": 14,
+    "name": "God's Blessing",
+    "cooldown": 10,
+    "emoji": "<:godblessing:1329094597691052144>",
+    "gearTypes": [
+      "Ring",
+      "Necklace"
+    ],
+    "info": "Heals 10% of your Max HP and improves Healing Effect by 25% for 6 rounds"
+  },
+  {
+    "id": 10,
+    "name": "Justice",
+    "cooldown": 50,
+    "emoji": "<:justice:1329094084236935168>",
+    "gearTypes": [
+      "Chestplate"
+    ],
+    "info": "A hit that causes death resurrects the player for 50% of the HP"
+  },
+  {
+    "id": 4,
+    "name": "Poison Edge",
+    "chance": 10,
+    "emoji": "<:poisonedge:1329093712051179652>",
+    "gearTypes": [
+      "Weapon"
+    ],
+    "cooldown": 5,
+    "info": "10% chance to inflict poison to the target for 5 turns"
+  },
+  {
+    "id": 8,
+    "name": "Premonition",
+    "emoji": "<:premonition:1329093553925914666>",
+    "gearTypes": [
+      "Weapon"
+    ],
+    "info": "If target is at 100% HP, deal 500% more damage"
+  },
+  {
+    "id": 2,
+    "emoji": "<:rage:1329093384517980191>",
+    "name": "Rage",
+    "gearTypes": [
+      "Weapon"
+    ],
+    "info": "When HP falls below 25%, Strength 2x"
+  },
+  {
+    "id": 11,
+    "name": "Rock Skin",
+    "gearTypes": [
+      "Boots"
+    ],
+    "emoji": "<:rock_skin:1329093184281641022>",
+    "info": "While stunned, your damage taken is reduced by 30%"
+  },
+  {
+    "id": 7,
+    "name": "Second Wind",
+    "cooldown": 30,
+    "emoji": "<:second_wind:1329092821671477269>",
+    "gearTypes": [
+      "Leggings"
+    ],
+    "info": "When your HP falls below 50%, Defense stat is boosted by 100%"
+  },
+  {
+    "id": 9,
+    "name": "Zeus Wrath",
+    "gearTypes": [
+      "Weapon"
+    ],
+    "cooldown": 20,
+    "emoji": "<:zeus_wrath:1329092551004655707>",
+    "chance": 15,
+    "info": "15% chance to unleash a storm of thunderbolts (10) dealing 50% of your damage each"
+  }
+]

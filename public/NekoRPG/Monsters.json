@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "level": 1,
+    "name": "Slime",
+    "emoji": "<:slime:1324071700102512843>",
+    "stats": {
+      "maxHealth": 250,
+      "strength": 10
+    },
+    "description": "A weird sticky mass",
+    "rewards": {
+      "xp": 50,
+      "money": 5,
+      "gems": 1
+    }
+  },
+  {
+    "id": 2,
+    "level": 5,
+    "name": "Slime Queen",
+    "emoji": "<:slimequeen:1327671088317993103>",
+    "stats": {
+      "maxHealth": 2500,
+      "strength": 100,
+      "defense": 100
+    },
+    "spells": [
+      10
+    ],
+    "description": "A weird sticky mass",
+    "rewards": {
+      "xp": 500,
+      "money": 50,
+      "gems": 10
+    }
+  },
+  {
+    "id": 3,
+    "level": 999,
+    "name": "Test",
+    "emoji": "<:slimequeen:1327671088317993103>",
+    "stats": {
+      "maxHealth": 250000,
+      "strength": 30000,
+      "defense": 10000
+    },
+    "spells": [
+      10
+    ],
+    "description": "A weird sticky mass",
+    "rewards": {
+      "xp": 50000,
+      "money": 20000,
+      "gems": 10000
+    }
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Slime Quest",
+    "description": "Slimes cause too much trouble nowadays",
+    "requirements": {
+      "finish": {
+        "items": [
+          {
+            "amount": 10,
+            "item": 5
+          }
+        ]
+      }
+    },
+    "rewards": {
+      "xp": 500,
+      "money": 250,
+      "gems": 100
+    }
+  }
+]

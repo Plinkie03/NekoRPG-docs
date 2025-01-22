@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Slime Field",
+    "emoji": "<:slimefield:1323440260616687762>",
+    "description": "The field were beginners are born",
+    "nodes": [
+      1,
+      2,
+      3
+    ],
+    "monsters": [
+      1,
+      2,
+      3
+    ]
+  }
+]

@@ -1,0 +1,50 @@
+.search {
+  background-color: var(--secondary);
+  border-radius: 1rem !important;
+}
+
+.searchBar {
+  padding-left: 1rem;
+  border-top-left-radius: 1rem !important;
+  border-bottom-left-radius: 1rem !important;
+}
+
+.searchBox {
+  display: flex;
+  background-color: var(--secondary);
+  position: relative;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.searchButton {
+  padding-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.buttonList {
+  margin-top: 2rem;
+  background-color: var(--secondary);
+  border-radius: 0.5rem !important;
+}
+
+.buttonBadge {
+  border-radius: 1rem !important;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.buttonElement:hover {
+  background-color: var(--thirdly);
+  width: 100%;
+}
+
+.Button {
+  padding: 0 !important;
+  max-width: 275px !important;
+}
+
+.buttonElement {
+  padding: 1rem;
+  border-radius: 0.5rem !important;
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "id": 2,
+    "name": "Coal Cave",
+    "emoji": "<:coal_cave:1324872154369495082>",
+    "resources": [
+      {
+        "hardness": 1000,
+        "item": 7,
+        "rewards": {
+          "skills": [
+            {
+              "type": "Mining",
+              "xp": 5
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Iron Cave",
+    "emoji": "<:iron_cave:1324873345128337519>",
+    "resources": [
+      {
+        "hardness": 1500,
+        "item": 4,
+        "rewards": {
+          "skills": [
+            {
+              "type": "Mining",
+              "xp": 8
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Birch Forest",
+    "emoji": "<:birchforest:1324081704352223293>",
+    "resources": [
+      {
+        "hardness": 1000,
+        "item": 3,
+        "rewards": {
+          "skills": [
+            {
+              "type": "Woodcutting",
+              "xp": 5
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

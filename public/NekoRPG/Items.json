@@ -1,0 +1,389 @@
+[
+  {
+    "id": 6,
+    "name": "Wooden Chest",
+    "type": "Lootbox",
+    "emoji": "<:woodenchest:1324485419017961512>",
+    "rewards": {
+      "items": [
+        {
+          "item": 2,
+          "chance": 25
+        }
+      ]
+    },
+    "description": "A chest that you can open",
+    "craft": {
+      "requirements": {
+        "items": [
+          {
+            "amount": 10,
+            "item": 3
+          }
+        ]
+      },
+      "rewards": {
+        "skills": [
+          {
+            "type": "Smithing",
+            "xp": 50
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 2,
+    "type": "Spell",
+    "price": 500,
+    "emoji": "<:arrow_rain:1324892721621499914>",
+    "name": "Arrow Rain",
+    "cooldown": 5
+  },
+  {
+    "id": 10,
+    "type": "Spell",
+    "name": "Slime Army",
+    "cooldown": 10,
+    "chance": 25
+  },
+  {
+    "id": 14,
+    "type": "Gear",
+    "gearType": "Boots",
+    "name": "Iron Boots",
+    "emoji": "<:iron_boots:1327760848521007156>",
+    "description": "Boots forged by iron",
+    "stats": {
+      "defense": 6,
+      "agility": 15
+    },
+    "craft": {
+      "requirements": {
+        "items": [
+          {
+            "item": 8,
+            "amount": 10
+          }
+        ]
+      },
+      "rewards": {
+        "skills": [
+          {
+            "type": "Smithing",
+            "xp": 50
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 12,
+    "type": "Gear",
+    "gearType": "Chestplate",
+    "name": "Iron Chestplate",
+    "emoji": "<:iron_chestplate:1327761093933793280>",
+    "description": "A chestplate forged by iron",
+    "stats": {
+      "defense": 12,
+      "maxHealth": 50
+    },
+    "craft": {
+      "requirements": {
+        "items": [
+          {
+            "item": 8,
+            "amount": 15
+          }
+        ]
+      },
+      "rewards": {
+        "skills": [
+          {
+            "type": "Smithing",
+            "xp": 75
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 11,
+    "type": "Gear",
+    "gearType": "Helmet",
+    "name": "Iron Helmet",
+    "emoji": "<:iron_helmet:1327762779381301359>",
+    "description": "A helmet forged by iron",
+    "stats": {
+      "defense": 5,
+      "maxHealth": 25
+    },
+    "craft": {
+      "requirements": {
+        "items": [
+          {
+            "item": 8,
+            "amount": 10
+          }
+        ]
+      },
+      "rewards": {
+        "skills": [
+          {
+            "type": "Smithing",
+            "xp": 50
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 13,
+    "type": "Gear",
+    "gearType": "Leggings",
+    "name": "Iron Leggings",
+    "emoji": "<:iron_leggings:1327762247627313254>",
+    "description": "Leggings forged by iron",
+    "stats": {
+      "defense": 10,
+      "agility": 10
+    },
+    "craft": {
+      "requirements": {
+        "items": [
+          {
+            "item": 8,
+            "amount": 12
+          }
+        ]
+      },
+      "rewards": {
+        "skills": [
+          {
+            "type": "Smithing",
+            "xp": 60
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 17,
+    "type": "Gear",
+    "gearType": "Necklace",
+    "name": "Iron Necklace",
+    "emoji": "<:iron_necklace:1327763614798581781>",
+    "description": "Necklace forged by iron",
+    "stats": {
+      "dodgeRate": 5,
+      "strength": 12,
+      "criticalMultiplier": 20
+    },
+    "craft": {
+      "requirements": {
+        "items": [
+          {
+            "item": 8,
+            "amount": 20
+          }
+        ]
+      },
+      "rewards": {
+        "skills": [
+          {
+            "type": "Smithing",
+            "xp": 70
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 16,
+    "type": "Gear",
+    "gearType": "Ring",
+    "name": "Iron Ring",
+    "emoji": "<:iron_ring:1327765039071101000>",
+    "description": "Ring forged by iron",
+    "stats": {
+      "criticalRate": 5,
+      "lifesteal": 5,
+      "strength": 10
+    },
+    "craft": {
+      "requirements": {
+        "items": [
+          {
+            "item": 8,
+            "amount": 20
+          }
+        ]
+      },
+      "rewards": {
+        "skills": [
+          {
+            "type": "Smithing",
+            "xp": 70
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 15,
+    "type": "Gear",
+    "gearType": "Shield",
+    "name": "Iron Shield",
+    "emoji": "<:iron_shield:1327763119493087334>",
+    "description": "Shield forged by iron",
+    "stats": {
+      "maxHealth": 75,
+      "defense": 15,
+      "blockRate": 5
+    },
+    "craft": {
+      "requirements": {
+        "items": [
+          {
+            "item": 8,
+            "amount": 25
+          }
+        ]
+      },
+      "rewards": {
+        "skills": [
+          {
+            "type": "Smithing",
+            "xp": 100
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 1,
+    "type": "Gear",
+    "gearType": "Weapon",
+    "name": "Iron Sword",
+    "emoji": "<:ironsword:1324072952379084840>",
+    "description": "A cute sword",
+    "stats": {
+      "strength": 10
+    },
+    "craft": {
+      "requirements": {
+        "items": [
+          {
+            "item": 8,
+            "amount": 5
+          },
+          {
+            "item": 3,
+            "amount": 10
+          }
+        ]
+      },
+      "rewards": {
+        "skills": [
+          {
+            "type": "Smithing",
+            "xp": 25
+          }
+        ]
+      }
+    },
+    "weaponType": "Sword"
+  },
+  {
+    "id": 8,
+    "type": "Material",
+    "emoji": "<:iron_ingot:1324885840564064277>",
+    "name": "Iron Ingot",
+    "description": "Made of iron ores, can be used for something",
+    "craft": {
+      "requirements": {
+        "items": [
+          {
+            "amount": 5,
+            "item": 4
+          }
+        ]
+      },
+      "rewards": {
+        "skills": [
+          {
+            "type": "Smithing",
+            "xp": 100
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 9,
+    "emoji": "<:steel_ingot:1324886213500600382>",
+    "type": "Material",
+    "name": "Steel Ingot",
+    "description": "What happens when you mix iron and coal? This!",
+    "craft": {
+      "requirements": {
+        "items": [
+          {
+            "amount": 5,
+            "item": 4
+          },
+          {
+            "amount": 2,
+            "item": 7
+          }
+        ],
+        "skills": [
+          {
+            "type": "Smithing",
+            "level": 20
+          }
+        ]
+      },
+      "chance": 80,
+      "rewards": {
+        "skills": [
+          {
+            "type": "Smithing",
+            "xp": 250
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 3,
+    "type": "Material",
+    "name": "Birch Log",
+    "emoji": "<:birchlog:1324082013485142107>",
+    "price": 5,
+    "description": "Simple wood for crafting various items"
+  },
+  {
+    "id": 7,
+    "type": "Material",
+    "name": "Coal",
+    "emoji": "<:coal:1324872042729705582>",
+    "description": "A big piece of coal",
+    "price": 5
+  },
+  {
+    "id": 4,
+    "type": "Material",
+    "name": "Iron Ore",
+    "emoji": "<:iron_ore:1324885392956063814>",
+    "description": "Can be turned into something useful",
+    "price": 5
+  },
+  {
+    "type": "Material",
+    "id": 5,
+    "name": "Slime Ball",
+    "description": "Sticky balls",
+    "price": 10
+  }
+]

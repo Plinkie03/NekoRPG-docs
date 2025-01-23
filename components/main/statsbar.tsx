@@ -1,8 +1,8 @@
-import { Skeleton, SkeletonCircle, SkeletonText, } from "@/components/ui/skeleton"
-
-import { useEffect, useState } from 'react';
-import style from '@/styles/sidebar.module.css';
-import Image from 'next/image';
+import { Skeleton } from "@/components/ui/skeleton";
+import { useEffect, useState, useMemo } from "react";
+import style from "@/styles/sidebar.module.css";
+import Image from "next/image";
+import { pascalCaseToSpaced } from "../functions/pascalToSpaced";
 
 interface Param {
   id: number;
@@ -19,26 +19,43 @@ interface Item {
   chance?: number;
   stats?: string;
   description?: string;
+  gearType?: string;
+  weaponType?: string;
 }
 
-const capitalizeFirstChar = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
+const capitalizeFirstChar = (str: string) =>
+  str.charAt(0).toUpperCase() + str.slice(1);
 
 const StatsBar: React.FC<Param> = ({ id, category }) => {
   const [item, setItem] = useState<Item | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const cacheKey = `${category}-${id}`;
+
+  // Use useMemo to return cached data or fetch it if not available
+  const cachedItem = useMemo(() => {
+    if (typeof window !== "undefined") {
+      const cachedData = sessionStorage.getItem(cacheKey);
+      if (cachedData) {
+        return JSON.parse(cachedData);
+      }
+    }
+    return null;
+  }, [cacheKey]);
+
   useEffect(() => {
-    // If id is 0 or not valid, skip fetching
     if (id <= 0) return;
 
     const capitalizedType = capitalizeFirstChar(category);
     const fetchItem = async () => {
-      setLoading(true); // Set loading state only when fetching starts
+      setLoading(true);
       try {
-        const response = await fetch(`/NekoRPG/${capitalizedType}.json`);
+        const response = await fetch(
+          `https://api.lynnux.xyz/nekoRPG/docs?type=${capitalizedType}`
+        );
         if (!response.ok) {
-          throw new Error('Failed to fetch items.');
+          throw new Error("Failed to fetch items.");
         }
 
         const data: Item[] = await response.json();
@@ -50,72 +67,47 @@ const StatsBar: React.FC<Param> = ({ id, category }) => {
 
         setItem(foundItem);
         setError(null); // Clear any previous error
+
+        // Cache the fetched item
+        if (typeof window !== "undefined") {
+          sessionStorage.setItem(cacheKey, JSON.stringify(foundItem));
+        }
       } catch (err: any) {
-        setError(err.message || 'An error occurred while fetching the item.');
-        setItem(null); // Ensure no stale data is displayed
+        setError(err.message || "An error occurred while fetching the item.");
+        setItem(null);
       } finally {
-        setLoading(false); // Ensure loading is stopped
+        setLoading(false);
       }
     };
 
-    fetchItem();
-  }, [id, category]);
+    if (!cachedItem) {
+      fetchItem();
+    } else {
+      setItem(cachedItem);
+    }
+  }, [id, category, cachedItem, cacheKey]);
 
   if (id <= 0) {
     return <div className="w-96 h-full p-4 fixed"></div>;
   }
 
-  if (loading) {
-    return <aside className="w-96 h-full p-4 fixed">
-      <div className={style.item}>
-        <div className={style.itemDetails}>
-          <div className={`${style.itemImage}`}>
-          <Skeleton height="6rem" width="6rem" className={`${style.itemImage}`}/>
-          </div>
-          <div className={style.itemText}>
-            <div className={style.textMain}>
-              <h2></h2>
+  if (loading || item === null) {
+    return (
+      <aside className="w-96 h-full p-4 fixed">
+        <div className={style.item}>
+          <div className={style.itemDetails}>
+            <div className={`${style.itemImage}`}>
+              <Skeleton height="6rem" width="6rem" className={`${style.itemImage}`} />
+            </div>
+            <div className={style.itemText}>
+              <div className={style.textMain}>
+                <h2>{loading ? "Loading..." : "Item not found"}</h2>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </aside>;
-  }
-
-  if (error) {
-    return <aside className="w-96 h-full p-4 fixed">
-    <div className={style.item}>
-        <div className={style.itemDetails}>
-          <div className={`${style.itemImage}`}>
-          <Skeleton height="6rem" width="6rem" className={`${style.itemImage}`}/>
-          </div>
-          <div className={style.itemText}>
-            <div className={style.textMain}>
-              <h2>Error:</h2>
-            </div>
-            <p>{error}</p>
-          </div>
-        </div>
-    </div>
-  </aside>;
-  }
-
-  if (item === null) {
-    return <aside className="w-96 h-full p-4 fixed">
-      <div className={style.item}>
-        <div className={style.itemDetails}>
-          <div className={`${style.itemImage}`}>
-            <Skeleton height="6rem" width="6rem" className={`${style.itemImage}`}/>
-          </div>
-          <div className={style.itemText}>
-            <div className={style.textMain}>
-              <h2>Error:</h2>
-            </div>
-            <p>No item found.</p>
-          </div>
-        </div>
-      </div>
-    </aside>;
+      </aside>
+    );
   }
 
   const processedItem = {
@@ -129,70 +121,73 @@ const StatsBar: React.FC<Param> = ({ id, category }) => {
   return (
     <aside className="w-96 h-full p-4 fixed">
       <div className={style.item}>
-        {item && (
-          <div className={style.itemDetails}>
-            <div className={`${style.itemImage}`}>
-              <Image
-                src={`https://cdn.discordapp.com/emojis/${processedItem.emoji}.webp`}
-                alt={`${item.name}`}
-                width={75}
-                height={75}
-                draggable={false}
-                className={style.image}
-              />
+        <div className={style.itemDetails}>
+          <div className={`${style.itemImage}`}>
+            <Image
+              src={`https://cdn.discordapp.com/emojis/${processedItem.emoji}.webp`}
+              alt={`${item.name}`}
+              width={75}
+              height={75}
+              draggable={false}
+              className={style.image}
+            />
+          </div>
+          <div className={style.itemText}>
+            <div className={style.textMain}>
+              <h2>{item.name}</h2>
+              <p className={style.description}>{item.description}</p>
             </div>
-            <div className={style.itemText}>
-              <div className={style.textMain}>
-                <h2>{item.name}</h2>
-                <p className={style.description}>{item.description}</p>
-              </div>
-              <div className={`${style.badgeListWrapper}`}>
+            <div className={`${style.badgeListWrapper}`}>
               <div className={style.badgeList}>
-                {item.type && (
+                {(item.weaponType || item.gearType || item.type) && (
                   <span className={style.badge}>
                     <div className={`flex gap-2 ${style.badgeSpace}`}>
-                      <div>Type:</div> <div>{item.type}</div>
+                      <div>
+                        {item.weaponType || item.gearType || item.type}
+                      </div>
+                      <div className={style.svg}>
+                        <Image src={`/${item.gearType ? item.gearType : item.type}.svg`} alt="" width={13} height={13} />
+                      </div>
                     </div>
                   </span>
                 )}
                 {item.price && (
                   <span className={style.badge}>
                     <div className={`flex gap-2 ${style.badgeSpace}`}>
-                      <div>Price:</div> <div>{item.price}$</div>
+                      <div>{item.price}$</div> <div className={style.svg}><Image src={"/price.svg"} alt={""} width={10} height={10}></Image></div>
                     </div>
                   </span>
                 )}
                 {item.cooldown && (
                   <span className={style.badge}>
                     <div className={`flex gap-2 ${style.badgeSpace}`}>
-                      <div>Cooldown:</div> <div>{item.cooldown}s</div>
+                      <div>{item.cooldown}</div> <div className={style.svg}><Image src={"/clock.svg"} alt={""} width={10} height={10}></Image></div>
                     </div>
                   </span>
                 )}
                 {item.chance && (
                   <span className={style.badge}>
                     <div className={`flex gap-2 ${style.badgeSpace}`}>
-                      <div>Chance:</div> <div>{item.chance}%</div>
+                    <div>{item.chance}%</div> <div className={style.svg}><Image src={"/Chance.svg"} alt={""} width={11} height={11}></Image></div>
                     </div>
                   </span>
                 )}
               </div>
             </div>
-              {item.stats && (
-                <>
-                  <ul className={style.statsList}>
-                    {Object.entries(item.stats).map(([statName, statValue]) => (
-                      <li key={statName} className={style.statItem}>
-                        <span className={style.statName}>{capitalizeFirstChar(statName)}</span>
-                        <span className={style.statValue}>{statValue}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </div>
+            {item.stats && (
+              <ul className={style.statsList}>
+                {Object.entries(item.stats).map(([statName, statValue]) => (
+                  <li key={statName} className={style.statItem}>
+                    <span className={style.statName}>
+                      {pascalCaseToSpaced(capitalizeFirstChar(statName))}
+                    </span>
+                    <span className={style.statValue}>{statValue}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </aside>
   );

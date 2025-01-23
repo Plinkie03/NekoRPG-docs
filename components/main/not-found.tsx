@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="flex px-40 py-20 text-white font-sans">
+    <div className="flex px-40 py-20 text-white font-sans not-found">
       <div className="text-center">
         <h1 className="text-6xl font-bold mb-4">404</h1>
         <h2 className="text-2xl mb-2">You’ve wandered into the wrong realm...</h2>

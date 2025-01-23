@@ -29,7 +29,7 @@ const Sidebar: React.FC = () => {
           />
         </div>
         <button title="searchButton" className={style.searchButton}>
-          <Image src={"./search.svg"}  alt="Test" width={25} height={25}/>
+          <Image src={"/search.svg"}  alt="Test" width={25} height={25}/>
         </button>
       </div>
       <div className={style.buttonList}>

@@ -85,3 +85,7 @@ body {
   max-width: 61.5vw;
   width: 61.5vw;
 }
+
+.not-found {
+  width: max-content !important;
+}

@@ -146,12 +146,12 @@ const StatsBar: React.FC<Param> = ({ id, category }) => {
                         {item.weaponType || item.gearType || item.type}
                       </div>
                       <div className={style.svg}>
-                        <Image src={`/${item.gearType ? item.gearType : item.type}.svg`} alt="" width={13} height={13} />
+                        <Image src={`/` +`${item.gearType ? item.gearType : item.type}`+'.svg'} alt="" width={13} height={13} />
                       </div>
                     </div>
                   </span>
                 )}
-                {item.price && (
+                {(!!item.price && item.price > 0) && (
                   <span className={style.badge}>
                     <div className={`flex gap-2 ${style.badgeSpace}`}>
                       <div>{item.price}$</div> <div className={style.svg}><Image src={"/price.svg"} alt={""} width={10} height={10}></Image></div>

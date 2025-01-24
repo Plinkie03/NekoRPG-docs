@@ -100,7 +100,7 @@
   width: 25%;
   padding: 1rem 0rem;
   height: fit-content;
-
+  display: unset;
 }
 
 .lynnWasHere {

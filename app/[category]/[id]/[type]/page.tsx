@@ -1,13 +1,32 @@
-import { FC } from 'react';
+"use client"
+import { FC, useEffect, useState } from 'react';
 
 interface Params {
   category: string;
   id: string;
-  type?: string;
+  type: string;
 }
 
-const Page: FC<{ params: Params }> = async ({ params }) => {
-  const { category, id, type } = await params;
+const Page: FC<{ params: Promise<Params> }> = ({ params }) => {
+  const [fetchedParams, setFetchedParams] = useState<Params | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const resolvedParams = await params;
+        setFetchedParams(resolvedParams);
+      } catch (error) {
+        console.error("Error fetching params:", error);
+        // Handle the error, e.g., display an error message to the user
+      }
+    };
+
+    fetchData();
+  }, [params]);
+
+  if (!fetchedParams) return <div>Loading...</div>; 
+
+  const { category, id, type } = fetchedParams;
 
   return (
     <div>

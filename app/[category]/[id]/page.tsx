@@ -1,13 +1,12 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
-import ItemList from "@/components/main/ItemList";
 import NotFound from "@/components/main/not-found";
-import StatsBar from "@/components/main/statsbar";
 import style from "@/styles/main.module.css";
 import { Skeleton } from "@chakra-ui/react";
 import Image from "next/image";
 import { pascalCaseToSpaced } from "@/components/functions/pascalToSpaced";
+import RequirementsDisplay from "@/components/main/requirementDisplay";
 
 interface Params {
   category: string;
@@ -24,6 +23,7 @@ interface Item {
   chance?: number;
   stats?: string;
   description?: string;
+  requirements?: {};
 }
 
 const capitalizeFirstChar = (str: string) =>
@@ -162,24 +162,26 @@ const Page = ({ params: paramsPromise }: { params: Promise<Params> }) => {
           <div className={style.content}>
           <div className={style.contentLeft}>
           </div>
-          {item.stats ? (
-            <div className={style.contentRight}>
-              <div className={style.lynnWasHere}>
-                <p className={style.nglIRanOutOfClassNames}>{item.type} Stats</p>
-                <ul className={style.statsList}>
-                  {Object.entries(item.stats).map(([statName, statValue]) => (
-                    <li key={statName} className={style.statItem}>
-                      <span className={style.statName}>
-                        {pascalCaseToSpaced(capitalizeFirstChar(statName))}
-                      </span>
-                      <span className={style.statValue}>{statValue}</span>
-                    </li>
-                  ))}
-                </ul>
-
+          <div className={style.contentRight}>
+            {item.stats ? (
+                <div className={style.lynnWasHere}>
+                  <p className={style.nglIRanOutOfClassNames}>{item.type} Stats</p>
+                  <ul className={style.statsList}>
+                    {Object.entries(item.stats).map(([statName, statValue]) => (
+                      <li key={statName} className={style.statItem}>
+                        <span className={style.statName}>
+                          {pascalCaseToSpaced(capitalizeFirstChar(statName))}
+                        </span>
+                        <span className={style.statValue}>{statValue}</span>
+                      </li>
+                    ))}
+                  </ul>
               </div>
-            </div>
-          ):(<div className={style.contentRight}></div>)}
+            ):(<div className={style.contentRight}></div>)}
+            {item.requirements ? (
+              <RequirementsDisplay requirements={item.requirements} />
+            ) : (<div></div>)}
+          </div>
         </div>
         </div>
       ) : (

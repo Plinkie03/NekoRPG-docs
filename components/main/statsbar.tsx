@@ -21,6 +21,7 @@ interface Item {
   description?: string;
   gearType?: string;
   weaponType?: string;
+  info?: string;
 }
 
 const capitalizeFirstChar = (str: string) =>
@@ -135,7 +136,9 @@ const StatsBar: React.FC<Param> = ({ id, category }) => {
           <div className={style.itemText}>
             <div className={style.textMain}>
               <h2>{item.name}</h2>
-              <p className={style.description}>{item.description}</p>
+              {(item.description || item.info) && (
+                <p className={style.description}>{item.description || item.info}</p>
+              )}
             </div>
             <div className={`${style.badgeListWrapper}`}>
               <div className={style.badgeList}>

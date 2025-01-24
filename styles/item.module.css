@@ -1,37 +1,57 @@
-.requirements-container {
+.requirements {
+  margin: auto;
   margin-bottom: 1rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-  border-width: 1px;
+  background-color: #ffffff20;
   border-radius: 0.5rem;
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  width: 85%;
+  margin-top: 0.5rem;
+  min-height: 4.2rem;
+  padding: 0.3rem;
 }
 
-.requirement-level, .requirement-skills {
-  margin-bottom: 1rem;
+.nglIRanOutOfClassNames {
+  font-weight: 500;
+  padding: 0.2rem 1rem;
+  font-size: x-large;
 }
 
-.requirement-level h3, .requirement-skills h3 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+.requirementsList {
+  padding: 0 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(3.5rem, 1fr));
+  gap: 0.5rem 0.5px;
+  width: 100%;
+  height: auto;
 }
 
-.requirement-level p, .requirement-skills ul li {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity, 1))
+.theDevIsGayAF {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  background-color: rgb(44, 44, 44);
+  border: 1px solid #444;
+  padding: 1%;
+  text-align: center;
 }
 
-.requirement-skills ul {
-  padding-left: 1rem;
-  list-style-position: inside;
-  list-style-type: disc;
+.levelTxt {
+  padding: auto;
+  font-size: small;
+  color: #999999 !important;
+  font-weight: 500;
+  margin-top: -0.4rem;
 }
 
-.requirement-skills ul li {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.level {
+  padding: auto;
+  font-size: large;
+  margin-top: 0.2rem;
+  color: white !important;
+  font-weight: 500;
+}
+
+.skillImage {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
 }
